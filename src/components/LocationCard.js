@@ -15,10 +15,9 @@ export default function LocationCard (props) {
     <Card>
       <Card.Content>
         <Card.Header>{name}</Card.Header>
-        <Card.Meta>{dimension}</Card.Meta>
         <Card.Description>
+        <p>{type} - {dimension}</p>
         <p>Residents : {residents.length}</p>
-        <p>Type : {type}</p>
         </Card.Description>
       </Card.Content>
     </Card>

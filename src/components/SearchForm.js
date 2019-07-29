@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Form, Button } from 'semantic-ui-react'
 
 export default function SearchForm({ onSearch }) {
   const [query, setQuery] = useState({
@@ -9,16 +10,17 @@ export default function SearchForm({ onSearch }) {
   }
 
   return (
-    <section className="search-form">
-      <form onSubmit={() => onSearch(query)}>
-        <input
-          onChange={handleInputChange}
-          placeholder="name"
-          value={query.name}
-          name="name"
-        />
-        <button type="submit">Search</button>
-      </form>
-    </section>
+    <div>
+      <Form className="search-form">
+        <Form.Field onSubmit={() => onSearch(query)}>
+        <label>Search For Character</label>
+        <input  placeholder='Character Name'
+              onChange={handleInputChange}
+              value={query.name}
+              name="name" />
+        </Form.Field>
+      <Button type='submit'>Submit</Button>
+    </Form>
+  </div>
   );
 }
